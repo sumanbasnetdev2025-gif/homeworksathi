@@ -23,7 +23,6 @@ export default function SolutionDisplay({
   const [deepDiveStep, setDeepDiveStep] = useState<string | null>(null)
   const [showFollowUp, setShowFollowUp] = useState(false)
 
-  // Safety check
   const steps = Array.isArray(solution?.steps) ? solution.steps : []
   const finalAnswer = solution?.finalAnswer ?? solution?.final_answer ?? 'See steps above'
 
@@ -59,15 +58,15 @@ export default function SolutionDisplay({
         <div className="space-y-3">
           {steps.map((step, index) => (
             <StepCard
-              key={step?.stepNumber ?? index}
+              key={step.stepNumber ?? index}
               step={{
-                stepNumber: step?.stepNumber ?? index + 1,
-                title: step?.title ?? `Step ${index + 1}`,
-                explanation: step?.explanation ?? step?.content ?? '',
-                math: step?.math ?? '',
+                stepNumber: step.stepNumber ?? index + 1,
+                title: step.title ?? `Step ${index + 1}`,
+                explanation: step.explanation ?? step.content ?? '',
+                math: step.math ?? '',
               }}
               onDeepDive={() =>
-                setDeepDiveStep(`${step?.title}: ${step?.explanation ?? ''}`)
+                setDeepDiveStep(`${step.title}: ${step.explanation ?? step.content ?? ''}`)
               }
             />
           ))}

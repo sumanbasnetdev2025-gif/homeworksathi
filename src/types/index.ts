@@ -6,6 +6,7 @@ export type SolveStep = {
   stepNumber: number
   title: string
   explanation: string
+  content?: string
   math?: string
 }
 

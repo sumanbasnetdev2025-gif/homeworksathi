@@ -21,6 +21,7 @@ const stepColors = [
 export default function StepCard({ step, onDeepDive }: StepCardProps) {
   const [expanded, setExpanded] = useState(true)
   const color = stepColors[(step.stepNumber - 1) % stepColors.length]
+  const explanationText = step.explanation ?? step.content ?? ''
 
   return (
     <div className={`bg-[#111827] border ${color.border} rounded-xl overflow-hidden transition-all`}>
@@ -34,7 +35,7 @@ export default function StepCard({ step, onDeepDive }: StepCardProps) {
         <div className="flex-1 min-w-0">
           <div className="font-syne font-bold text-white text-sm">{step.title}</div>
           {!expanded && (
-            <div className="text-slate-500 text-xs mt-0.5 truncate">{step.explanation}</div>
+            <div className="text-slate-500 text-xs mt-0.5 truncate">{explanationText}</div>
           )}
         </div>
         <div className="flex items-center gap-2">
@@ -56,7 +57,7 @@ export default function StepCard({ step, onDeepDive }: StepCardProps) {
       {expanded && (
         <div className="px-4 pb-4">
           <div className="pl-10">
-            <p className="text-slate-300 text-sm leading-relaxed">{step.explanation}</p>
+            <p className="text-slate-300 text-sm leading-relaxed">{explanationText}</p>
             {step.math && (
               <div className="mt-2 bg-[#0d1428] border border-[#1e2d47] rounded-lg px-4 py-2.5 font-mono text-amber-300 text-sm">
                 {step.math}
