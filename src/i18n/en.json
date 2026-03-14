@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "subjects": "Subjects",
+    "howItWorks": "How it works",
+    "features": "Features",
+    "pricing": "Pricing",
+    "login": "Log in",
+    "signup": "Get started free"
+  },
+  "hero": {
+    "badge": "AI-powered • Grade 8–12 • Nepal",
+    "title1": "Solve Any",
+    "title2": "Homework",
+    "title3": "Instantly.",
+    "desc": "Upload a photo of your homework and get clear, step-by-step solutions in seconds.",
+    "cta": "Start solving free",
+    "demo": "See how it works"
+  },
+  "solve": {
+    "uploadPhoto": "Upload Photo",
+    "dragDrop": "Drag & drop your homework image here",
+    "orTypeQuestion": "Or type your question",
+    "selectSubject": "Select a subject",
+    "solve": "Solve Now",
+    "solving": "Solving...",
+    "step": "Step",
+    "finalAnswer": "Final Answer",
+    "deepDive": "Click any step to go deeper",
+    "followUp": "Ask a follow-up question",
+    "followUpPlaceholder": "e.g. Why did you divide by 2?"
+  },
+  "auth": {
+    "login": "Log in",
+    "signup": "Sign up",
+    "email": "Email address",
+    "password": "Password",
+    "name": "Full name",
+    "loginCta": "Log in to your account",
+    "signupCta": "Create your account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "forgotPassword": "Forgot password?"
+  },
+  "dashboard": {
+    "title": "My Dashboard",
+    "history": "Question History",
+    "usage": "Daily Usage",
+    "questionsLeft": "questions left today",
+    "upgrade": "Upgrade to Premium"
+  }
+}
