@@ -18,11 +18,18 @@ export default function EquationRenderer({
   useEffect(() => {
     if (!ref.current || !math) return
 
-    // Use KaTeX if available
+    // Add KaTeX CSS if not already added
+    if (!document.getElementById('katex-css')) {
+      const link = document.createElement('link')
+      link.id = 'katex-css'
+      link.rel = 'stylesheet'
+      link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
+      document.head.appendChild(link)
+    }
+
     const renderMath = async () => {
       try {
         const katex = await import('katex')
-        await import('katex/dist/katex.min.css')
         if (ref.current) {
           katex.default.render(math, ref.current, {
             throwOnError: false,
@@ -31,7 +38,6 @@ export default function EquationRenderer({
           })
         }
       } catch {
-        // Fallback to plain text
         if (ref.current) {
           ref.current.textContent = math
         }
